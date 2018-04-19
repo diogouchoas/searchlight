@@ -66,8 +66,8 @@ Any NodeAlert can specify nodes in 2 ways:
 
 ### Check Command
 Check commands are used by Icinga to periodically test some condition. If the test return positive appropriate notifications are sent. The following check commands are supported for nodes:
-- [node-status](/docs/guides/node-alerts/node_status.md) - To check Kubernetes Node status.
-- [node-volume](/docs/guides/node-alerts/node_volume.md) - To check Node Disk stat.
+- [node-status](/docs/guides/node-alerts/node-status.md) - To check Kubernetes Node status.
+- [node-volume](/docs/guides/node-alerts/node-volume.md) - To check Node Disk stat.
 
 Each check command has a name specified in `spec.check` field. Optionally each check command can take one or more parameters. These are specified in `spec.vars` field. To learn about the available parameters for each check command, please visit their documentation. `spec.checkInterval` specifies how frequently Icinga will perform this check. Some examples are: 30s, 5m, 6h, etc.
 
@@ -87,8 +87,8 @@ You can skip this section if you are unfamiliar with how Icinga works. Searchlig
 
 ## Next Steps
  - Visit the links below to learn about the available check commands for nodes:
-    - [node-status](/docs/guides/node-alerts/node_status.md) - To check Kubernetes Node status.
-    - [node-volume](/docs/guides/node-alerts/node_volume.md) - To check Node Disk stat.
+    - [node-status](/docs/guides/node-alerts/node-status.md) - To check Kubernetes Node status.
+    - [node-volume](/docs/guides/node-alerts/node-volume.md) - To check Node Disk stat.
  - To periodically run various checks on a Kubernetes cluster, use [ClusterAlerts](/docs/concepts/alert-types/cluster-alert.md).
  - To periodically run various checks on pods in a Kubernetes cluster, use [PodAlerts](/docs/concepts/alert-types/pod-alert.md).
  - See the list of supported notifiers [here](/docs/guides/notifiers.md).

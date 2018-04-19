@@ -93,7 +93,7 @@ otherwise, operator will not create Icinga objects for your Alert.
 
 ```json
 {
-      "name": component-status,
+      "name": "component-status",
       "vars": [
         {
           "flag": {

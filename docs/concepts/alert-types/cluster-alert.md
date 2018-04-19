@@ -54,12 +54,12 @@ Any ClusterAlert object has 2 main sections:
 ### Check Command
 Check commands are used by Icinga to periodically test some condition. If the test return positive appropriate notifications are sent. The following check commands are supported for pods:
 
-- [ca-cert](/docs/guides/cluster-alerts/ca_cert.md) - To check expiration of CA certificate used by Kubernetes api server.
-- [component-status](/docs/guides/cluster-alerts/component_status.md) - To check Kubernetes component status.
+- [ca-cert](/docs/guides/cluster-alerts/ca-cert.md) - To check expiration of CA certificate used by Kubernetes api server.
+- [component-status](/docs/guides/cluster-alerts/component-status.md) - To check Kubernetes component status.
 - [event](/docs/guides/cluster-alerts/event.md) - To check Kubernetes Warning events.
-- [json-path](/docs/guides/cluster-alerts/json_path.md) - To check any JSON HTTP response using [jq](https://stedolan.github.io/jq/).
-- [node-exists](/docs/guides/cluster-alerts/node_exists.md) - To check existence of Kubernetes nodes.
-- [pod-exists](/docs/guides/cluster-alerts/pod_exists.md) - To check existence of Kubernetes pods.
+- [json-path](/docs/guides/cluster-alerts/json-path.md) - To check any JSON HTTP response using [jq](https://stedolan.github.io/jq/).
+- [node-exists](/docs/guides/cluster-alerts/node-exists.md) - To check existence of Kubernetes nodes.
+- [pod-exists](/docs/guides/cluster-alerts/pod-exists.md) - To check existence of Kubernetes pods.
 
 Each check command has a name specified in `spec.check` field. Optionally each check command can take one or more parameters. These are specified in `spec.vars` field. To learn about the available parameters for each check command, please visit their documentation. `spec.checkInterval` specifies how frequently Icinga will perform this check. Some examples are: 30s, 5m, 6h, etc.
 
@@ -79,12 +79,12 @@ You can skip this section if you are unfamiliar with how Icinga works. Searchlig
 
 ## Next Steps
  - Visit the links below to learn about the available check commands for a cluster:
-    - [ca-cert](/docs/guides/cluster-alerts/ca_cert.md) - To check expiration of CA certificate used by Kubernetes api server.
-    - [component-status](/docs/guides/cluster-alerts/component_status.md) - To check Kubernetes component status.
+    - [ca-cert](/docs/guides/cluster-alerts/ca-cert.md) - To check expiration of CA certificate used by Kubernetes api server.
+    - [component-status](/docs/guides/cluster-alerts/component-status.md) - To check Kubernetes component status.
     - [event](/docs/guides/cluster-alerts/event.md) - To check Kubernetes Warning events.
-    - [json-path](/docs/guides/cluster-alerts/json_path.md) - To check any JSON HTTP response using [jq](https://stedolan.github.io/jq/).
-    - [node-exists](/docs/guides/cluster-alerts/node_exists.md) - To check existence of Kubernetes nodes.
-    - [pod-exists](/docs/guides/cluster-alerts/pod_exists.md) - To check existence of Kubernetes pods.
+    - [json-path](/docs/guides/cluster-alerts/json-path.md) - To check any JSON HTTP response using [jq](https://stedolan.github.io/jq/).
+    - [node-exists](/docs/guides/cluster-alerts/node-exists.md) - To check existence of Kubernetes nodes.
+    - [pod-exists](/docs/guides/cluster-alerts/pod-exists.md) - To check existence of Kubernetes pods.
  - To periodically run various checks on nodes in a Kubernetes cluster, use [NodeAlerts](/docs/concepts/alert-types/node-alert.md).
  - To periodically run various checks on pods in a Kubernetes cluster, use [PodAlerts](/docs/concepts/alert-types/pod-alert.md).
  - See the list of supported notifiers [here](/docs/guides/notifiers.md).

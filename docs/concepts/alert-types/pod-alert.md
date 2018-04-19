@@ -68,9 +68,9 @@ Any PodAlert can specify pods in 2 ways:
 
 ### Check Command
 Check commands are used by Icinga to periodically test some condition. If the test return positive appropriate notifications are sent. The following check commands are supported for pods:
-- [pod-exec](/docs/guides/pod-alerts/pod_exec.md) - To check Kubernetes exec command. Returns OK if exit code is zero, otherwise, returns Critical
-- [pod-status](/docs/guides/pod-alerts/pod_status.md) - To check Kubernetes pod status.
-- [pod-volume](/docs/guides/pod-alerts/pod_volume.md) - To check Pod volume usage stat.
+- [pod-exec](/docs/guides/pod-alerts/pod-exec.md) - To check Kubernetes exec command. Returns OK if exit code is zero, otherwise, returns Critical
+- [pod-status](/docs/guides/pod-alerts/pod-status.md) - To check Kubernetes pod status.
+- [pod-volume](/docs/guides/pod-alerts/pod-volume.md) - To check Pod volume usage stat.
 
 Each check command has a name specified in `spec.check` field. Optionally each check command can take one or more parameters. These are specified in `spec.vars` field. To learn about the available parameters for each check command, please visit their documentation. `spec.checkInterval` specifies how frequently Icinga will perform this check. Some examples are: 30s, 5m, 6h, etc.
 
@@ -90,9 +90,9 @@ You can skip this section if you are unfamiliar with how Icinga works. Searchlig
 
 ## Next Steps
  - Visit the links below to learn about the available check commands for pods:
-    - [pod-exec](/docs/guides/pod-alerts/pod_exec.md) - To check Kubernetes exec command. Returns OK if exit code is zero, otherwise, returns Critical
-    - [pod-status](/docs/guides/pod-alerts/pod_status.md) - To check Kubernetes pod status.
-    - [pod-volume](/docs/guides/pod-alerts/pod_volume.md) - To check Pod volume stat.
+    - [pod-exec](/docs/guides/pod-alerts/pod-exec.md) - To check Kubernetes exec command. Returns OK if exit code is zero, otherwise, returns Critical
+    - [pod-status](/docs/guides/pod-alerts/pod-status.md) - To check Kubernetes pod status.
+    - [pod-volume](/docs/guides/pod-alerts/pod-volume.md) - To check Pod volume stat.
  - To periodically run various checks on a Kubernetes cluster, use [ClusterAlerts](/docs/concepts/alert-types/cluster-alert.md).
  - To periodically run various checks on nodes in a Kubernetes cluster, use [NodeAlerts](/docs/concepts/alert-types/node-alert.md).
  - See the list of supported notifiers [here](/docs/guides/notifiers.md).

@@ -2,13 +2,13 @@
 title: Check command | Icinga2
 description: How to add support of additional Check command in Searchlight
 menu:
-  product_searchlight_6.0.0-alpha.0:
+  product_searchlight_6.0.0-rc.0:
     identifier: add-check-command
     name: CheckCommand
     parent: developer-guide
     weight: 15
 product_name: searchlight
-menu_name: product_searchlight_6.0.0-alpha.0
+menu_name: product_searchlight_6.0.0-rc.0
 section_menu_id: setup
 ---
 
@@ -93,7 +93,7 @@ otherwise, operator will not create Icinga objects for your Alert.
 
 ```json
 {
-      "name": "component_status",
+      "name": component-status,
       "vars": [
         {
           "flag": {

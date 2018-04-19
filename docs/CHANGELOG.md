@@ -2,17 +2,17 @@
 title: Changelog | Searchlight
 description: Changelog
 menu:
-  product_searchlight_6.0.0-alpha.0:
+  product_searchlight_6.0.0-rc.0:
     identifier: changelog-searchlight
     name: Changelog
     parent: welcome
     weight: 10
 product_name: searchlight
-menu_name: product_searchlight_6.0.0-alpha.0
+menu_name: product_searchlight_6.0.0-rc.0
 section_menu_id: welcome
-url: /products/searchlight/6.0.0-alpha.0/welcome/changelog/
+url: /products/searchlight/6.0.0-rc.0/welcome/changelog/
 aliases:
-  - /products/searchlight/6.0.0-alpha.0/CHANGELOG/
+  - /products/searchlight/6.0.0-rc.0/CHANGELOG/
 ---
 
 # Change Log
@@ -100,7 +100,7 @@ aliases:
 - Use ${} form for onessl envsubst [\#269](https://github.com/appscode/searchlight/pull/269) ([tamalsaha](https://github.com/tamalsaha))
 - Merge uninstall script into installer [\#268](https://github.com/appscode/searchlight/pull/268) ([tamalsaha](https://github.com/tamalsaha))
 - Copy generic-admission-server into pkg [\#267](https://github.com/appscode/searchlight/pull/267) ([tamalsaha](https://github.com/tamalsaha))
-- Cut 6.0.0-alpha.0 [\#265](https://github.com/appscode/searchlight/pull/265) ([tamalsaha](https://github.com/tamalsaha))
+- Cut 6.0.0-rc.0 [\#265](https://github.com/appscode/searchlight/pull/265) ([tamalsaha](https://github.com/tamalsaha))
 - Add ValidatingAdmissionWebhook for CRDs [\#264](https://github.com/appscode/searchlight/pull/264) ([tamalsaha](https://github.com/tamalsaha))
 - Fix instructions for using private docker registry [\#263](https://github.com/appscode/searchlight/pull/263) ([tamalsaha](https://github.com/tamalsaha))
 - Use installer script [\#262](https://github.com/appscode/searchlight/pull/262) ([tamalsaha](https://github.com/tamalsaha))

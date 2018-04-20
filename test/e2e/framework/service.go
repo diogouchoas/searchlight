@@ -6,6 +6,7 @@ import (
 	"strings"
 	"time"
 
+	kutil_core "github.com/appscode/kutil/core/v1"
 	shell "github.com/codeskyblue/go-sh"
 	. "github.com/onsi/gomega"
 	core "k8s.io/api/core/v1"
@@ -29,6 +30,18 @@ func (f *Framework) GetServiceEndpoint(meta metav1.ObjectMeta, portName string) 
 	service, err := f.kubeClient.CoreV1().Services(meta.Namespace).Get(meta.Name, metav1.GetOptions{})
 	if err != nil {
 		return "", err
+	}
+
+	if strings.ToLower(f.Provider) == "minikube" {
+		service, _, _ = kutil_core.PatchService(f.kubeClient, service, func(s *core.Service) *core.Service {
+			s.Spec.Type = core.ServiceTypeNodePort
+			return s
+		})
+	} else {
+		service, _, _ = kutil_core.PatchService(f.kubeClient, service, func(s *core.Service) *core.Service {
+			s.Spec.Type = core.ServiceTypeLoadBalancer
+			return s
+		})
 	}
 
 	var port int32

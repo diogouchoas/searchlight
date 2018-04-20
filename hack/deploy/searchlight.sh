@@ -243,12 +243,8 @@ if [ "$SEARCHLIGHT_RUN_ON_MASTER" -eq 1 ]; then
 fi
 
 if [ "$SEARCHLIGHT_ENABLE_VALIDATING_WEBHOOK" = true ]; then
-    echo "---"
-    echo "$KUBE_CA"
     ${SCRIPT_LOCATION}hack/deploy/validating-webhook-configuration.yaml | $ONESSL envsubst | kubectl apply -f -
 fi
-
-echo "---"
 
 echo
 echo "waiting until searchlight operator deployment is ready"

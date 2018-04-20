@@ -26,15 +26,17 @@ import (
 )
 
 var (
-	provider       string
-	storageClass   string
-	providedIcinga string
+	provider           string
+	storageClass       string
+	providedIcinga     string
+	providedController bool
 )
 
 func init() {
 	flag.StringVar(&provider, "provider", "minikube", "Kubernetes cloud provider")
 	flag.StringVar(&storageClass, "storageclass", "", "Kubernetes StorageClass name")
-	flag.StringVar(&providedIcinga, "provided-icinga", "", "Running Icinga reference")
+	flag.StringVar(&providedIcinga, "icinga-reference", "", "Running Icinga reference")
+	flag.BoolVar(&providedController, "provided-controller", false, "Enable this for provided controller")
 }
 
 const (
@@ -108,8 +110,19 @@ var _ = BeforeSuite(func() {
 		CACert:   nil,
 	}
 
-	cfg.BasicAuth.Username = ICINGA_API_USER
-	cfg.BasicAuth.Password = ICINGA_API_PASSWORD
+	if providedIcinga == "" {
+		cfg.BasicAuth.Username = ICINGA_API_USER
+		cfg.BasicAuth.Password = ICINGA_API_PASSWORD
+	} else {
+		c, err := root.GetIcingaApiAuth(slService.ObjectMeta)
+		Expect(err).NotTo(HaveOccurred())
+		cfg.BasicAuth.Username = c.BasicAuth.Username
+		cfg.BasicAuth.Password = c.BasicAuth.Password
+	}
+
+	fmt.Println(cfg.Endpoint)
+	fmt.Println(cfg.BasicAuth.Username)
+	fmt.Println(cfg.BasicAuth.Password)
 
 	// Icinga Client
 	icingaClient := icinga.NewClient(*cfg)
@@ -120,24 +133,26 @@ var _ = BeforeSuite(func() {
 	Expect(err).NotTo(HaveOccurred())
 	fmt.Println()
 	fmt.Println("Icingaweb2:     ", fmt.Sprintf("http://%v/", icingawebEndpoint))
-	fmt.Println("Login password: ", ICINGA_WEB_UI_PASSWORD)
 	fmt.Println()
 
-	opc := &operator.OperatorConfig{
-		Config: operator.Config{
-			MaxNumRequeues: 3,
-			NumThreads:     3,
-			Verbosity:      "6",
-		},
-		KubeClient:   kubeClient,
-		CRDClient:    apiExtKubeClient,
-		ExtClient:    extClient,
-		IcingaClient: icingaClient,
+	if !providedController {
+		opc := &operator.OperatorConfig{
+			Config: operator.Config{
+				MaxNumRequeues: 3,
+				NumThreads:     3,
+				Verbosity:      "6",
+			},
+			KubeClient:   kubeClient,
+			CRDClient:    apiExtKubeClient,
+			ExtClient:    extClient,
+			IcingaClient: icingaClient,
+		}
+		// Controller
+		op, err = opc.New()
+		Expect(err).NotTo(HaveOccurred())
+		go op.RunWatchers(nil)
 	}
-	// Controller
-	op, err = opc.New()
-	Expect(err).NotTo(HaveOccurred())
-	go op.RunWatchers(nil)
+
 })
 
 var _ = AfterSuite(func() {

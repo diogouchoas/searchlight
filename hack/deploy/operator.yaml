@@ -7,6 +7,8 @@ metadata:
     app: searchlight
 data:
   ICINGA_WEB_UI_PASSWORD: Y2hhbmdlaXQ=
+  ICINGA_API_USER: aWNpbmdhYXBp
+  ICINGA_API_PASSWORD: Y2hhbmdlaXQ=
 ---
 apiVersion: apps/v1beta1
 kind: Deployment

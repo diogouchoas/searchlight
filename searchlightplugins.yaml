@@ -1,0 +1,416 @@
+apiVersion: v1
+items:
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"ca-cert","namespace":""},"spec":{"alertKinds":["ClusterAlert"],"arguments":{"host":{"v":"vars.verbosity"},"vars":{"Item":{"critical":{"type":"duration"},"warning":{"type":"duration"}}}},"command":"hyperalert check_ca_cert","state":["OK","Warning","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:50Z
+    generation: 1
+    name: ca-cert
+    namespace: ""
+    resourceVersion: "14626"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/ca-cert
+    uid: a71e698a-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - ClusterAlert
+    arguments:
+      host:
+        v: vars.verbosity
+      vars:
+        Item:
+          critical:
+            type: duration
+          warning:
+            type: duration
+    command: hyperalert check_ca_cert
+    state:
+    - OK
+    - Warning
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"cert","namespace":""},"spec":{"alertKinds":["ClusterAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"},"vars":{"Item":{"critical":{"type":"duration"},"secretKey":{"type":"string"},"secretName":{"type":"string"},"selector":{"type":"string"},"warning":{"type":"duration"}}}},"command":"hyperalert check_cert","state":["OK","Warning","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:50Z
+    generation: 1
+    name: cert
+    namespace: ""
+    resourceVersion: "14627"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/cert
+    uid: a74d94bb-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - ClusterAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+      vars:
+        Item:
+          critical:
+            type: duration
+          secretKey:
+            type: string
+          secretName:
+            type: string
+          selector:
+            type: string
+          warning:
+            type: duration
+    command: hyperalert check_cert
+    state:
+    - OK
+    - Warning
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"component-status","namespace":""},"spec":{"alertKinds":["ClusterAlert"],"arguments":{"host":{"v":"vars.verbosity"},"vars":{"Item":{"componentName":{"type":"string"},"selector":{"type":"string"}}}},"command":"hyperalert check_component_status","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:47Z
+    generation: 1
+    name: component-status
+    namespace: ""
+    resourceVersion: "14619"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/component-status
+    uid: a5d0bdec-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - ClusterAlert
+    arguments:
+      host:
+        v: vars.verbosity
+      vars:
+        Item:
+          componentName:
+            type: string
+          selector:
+            type: string
+    command: hyperalert check_component_status
+    state:
+    - OK
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"event","namespace":""},"spec":{"alertKinds":["ClusterAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"},"vars":{"Item":{"clockSkew":{"type":"duration"},"involvedObjectKind":{"type":"string"},"involvedObjectName":{"type":"string"},"involvedObjectNamespace":{"type":"string"},"involvedObjectUID":{"type":"string"}}}},"command":"hyperalert check_event","state":["OK","Warning","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:49Z
+    generation: 1
+    name: event
+    namespace: ""
+    resourceVersion: "14625"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/event
+    uid: a6e1e009-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - ClusterAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+      vars:
+        Item:
+          clockSkew:
+            type: duration
+          involvedObjectKind:
+            type: string
+          involvedObjectName:
+            type: string
+          involvedObjectNamespace:
+            type: string
+          involvedObjectUID:
+            type: string
+    command: hyperalert check_event
+    state:
+    - OK
+    - Warning
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"json-path","namespace":""},"spec":{"alertKinds":["ClusterAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"},"vars":{"Item":{"critical":{"type":"string"},"secretName":{"type":"string"},"url":{"type":"string"},"warning":{"type":"string"}},"required":["url"]}},"command":"hyperalert check_json_path","state":["OK","Warning","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:48Z
+    generation: 1
+    name: json-path
+    namespace: ""
+    resourceVersion: "14620"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/json-path
+    uid: a624383c-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - ClusterAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+      vars:
+        Item:
+          critical:
+            type: string
+          secretName:
+            type: string
+          url:
+            type: string
+          warning:
+            type: string
+        required:
+        - url
+    command: hyperalert check_json_path
+    state:
+    - OK
+    - Warning
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"node-exists","namespace":""},"spec":{"alertKinds":["ClusterAlert"],"arguments":{"host":{"v":"vars.verbosity"},"vars":{"Item":{"count":{"type":"integer"},"nodeName":{"type":"string"},"selector":{"type":"string"}}}},"command":"hyperalert check_node_exists","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:48Z
+    generation: 1
+    name: node-exists
+    namespace: ""
+    resourceVersion: "14622"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/node-exists
+    uid: a637d347-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - ClusterAlert
+    arguments:
+      host:
+        v: vars.verbosity
+      vars:
+        Item:
+          count:
+            type: integer
+          nodeName:
+            type: string
+          selector:
+            type: string
+    command: hyperalert check_node_exists
+    state:
+    - OK
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"node-status","namespace":""},"spec":{"alertKinds":["NodeAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"}},"command":"hyperalert check_node_status","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:50Z
+    generation: 1
+    name: node-status
+    namespace: ""
+    resourceVersion: "14629"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/node-status
+    uid: a7833f2f-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - NodeAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+    command: hyperalert check_node_status
+    state:
+    - OK
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"node-volume","namespace":""},"spec":{"alertKinds":["NodeAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"},"vars":{"Item":{"critical":{"type":"number"},"mountPoint":{"type":"string"},"secretName":{"type":"string"},"warning":{"type":"number"}},"required":["mountPoint"]}},"command":"hyperalert check_volume","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:51Z
+    generation: 1
+    name: node-volume
+    namespace: ""
+    resourceVersion: "14630"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/node-volume
+    uid: a7cd5fe0-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - NodeAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+      vars:
+        Item:
+          critical:
+            type: number
+          mountPoint:
+            type: string
+          secretName:
+            type: string
+          warning:
+            type: number
+        required:
+        - mountPoint
+    command: hyperalert check_volume
+    state:
+    - OK
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"pod-exec","namespace":""},"spec":{"alertKinds":["PodAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"},"vars":{"Item":{"argv":{"type":"string"},"cmd":{"type":"string"},"container":{"type":"string"}},"required":["argv"]}},"command":"hyperalert check_pod_exec","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:52Z
+    generation: 1
+    name: pod-exec
+    namespace: ""
+    resourceVersion: "14635"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/pod-exec
+    uid: a8d781cf-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - PodAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+      vars:
+        Item:
+          argv:
+            type: string
+          cmd:
+            type: string
+          container:
+            type: string
+        required:
+        - argv
+    command: hyperalert check_pod_exec
+    state:
+    - OK
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"pod-exists","namespace":""},"spec":{"alertKinds":["ClusterAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"},"vars":{"Item":{"count":{"type":"integer"},"podName":{"type":"string"},"selector":{"type":"string"}}}},"command":"hyperalert check_pod_exists","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:49Z
+    generation: 1
+    name: pod-exists
+    namespace: ""
+    resourceVersion: "14623"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/pod-exists
+    uid: a6a4b357-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - ClusterAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+      vars:
+        Item:
+          count:
+            type: integer
+          podName:
+            type: string
+          selector:
+            type: string
+    command: hyperalert check_pod_exists
+    state:
+    - OK
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"pod-status","namespace":""},"spec":{"alertKinds":["PodAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"}},"command":"hyperalert check_pod_status","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:51Z
+    generation: 1
+    name: pod-status
+    namespace: ""
+    resourceVersion: "14632"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/pod-status
+    uid: a83ad890-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - PodAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+    command: hyperalert check_pod_status
+    state:
+    - OK
+    - Critical
+    - Unknown
+- apiVersion: monitoring.appscode.com/v1alpha1
+  kind: SearchlightPlugin
+  metadata:
+    annotations:
+      kubectl.kubernetes.io/last-applied-configuration: |
+        {"apiVersion":"monitoring.appscode.com/v1alpha1","kind":"SearchlightPlugin","metadata":{"annotations":{},"creationTimestamp":null,"name":"pod-volume","namespace":""},"spec":{"alertKinds":["PodAlert"],"arguments":{"host":{"host":"name","v":"vars.verbosity"},"vars":{"Item":{"critical":{"type":"number"},"secretName":{"type":"string"},"volumeName":{"type":"string"},"warning":{"type":"number"}},"required":["volumeName"]}},"command":"hyperalert check_volume","state":["OK","Critical","Unknown"]}}
+    clusterName: ""
+    creationTimestamp: 2018-04-20T09:31:52Z
+    generation: 1
+    name: pod-volume
+    namespace: ""
+    resourceVersion: "14633"
+    selfLink: /apis/monitoring.appscode.com/v1alpha1/searchlightplugins/pod-volume
+    uid: a88c4fae-447d-11e8-8b5e-0800279df902
+  spec:
+    alertKinds:
+    - PodAlert
+    arguments:
+      host:
+        host: name
+        v: vars.verbosity
+      vars:
+        Item:
+          critical:
+            type: number
+          secretName:
+            type: string
+          volumeName:
+            type: string
+          warning:
+            type: number
+        required:
+        - volumeName
+    command: hyperalert check_volume
+    state:
+    - OK
+    - Critical
+    - Unknown
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
